@@ -2036,6 +2036,7 @@ class Conda(object):
                             ret.setdefault(possible_env_id, []).append(entry.path)
         else:
             envs = self._info["envs"]  # type: List[str]
+            import pdb; pdb.set_trace()
             for env in envs:
                 with CondaLock(self.echo, self._env_lock_file(env)):
                     possible_env_id = _check_match(env)
