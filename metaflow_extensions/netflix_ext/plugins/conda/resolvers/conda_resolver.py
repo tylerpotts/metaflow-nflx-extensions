@@ -129,7 +129,7 @@ class CondaResolver(Resolver):
                     lnk["build_number"],
                 )
                 if k == '_libgcc_mutex_linux-64_conda_forge_0':
-                    import pdb; pdb.set_trace()
+                    
                 url, md5_hash = fetched_packages[k]
                 if not url.startswith(lnk["base_url"]):
                     raise CondaException(
@@ -144,6 +144,7 @@ class CondaResolver(Resolver):
                         hashes={parse_result.url_format: cast(str, parse_result.hash)},
                     )
                 )
+                import pdb; pdb.set_trace()
         return (
             ResolvedEnvironment(
                 deps,
