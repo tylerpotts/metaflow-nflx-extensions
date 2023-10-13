@@ -123,7 +123,7 @@ class CondaResolver(Resolver):
                 ] = (pkg["url"], pkg["md5"])
             for lnk in conda_result["actions"]["LINK"]:
                 k = _pkg_key(
-                    lnk["name"],
+                    lnk["name"], # libstdcxx-ng_linux-64_h7e041cc_2_2
                     lnk["platform"],
                     lnk["build_string"],
                     lnk["build_number"],

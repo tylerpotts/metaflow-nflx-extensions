@@ -275,6 +275,7 @@ class Conda(object):
             ):
                 args.extend(["-r", self._info["root_prefix"], "--json"])
             debug.conda_exec("Conda call: %s" % str([self._bins[binary]] + args))
+            import pdb; pdb.set_trace()
             return cast(
                 bytes,
                 subprocess.check_output(
