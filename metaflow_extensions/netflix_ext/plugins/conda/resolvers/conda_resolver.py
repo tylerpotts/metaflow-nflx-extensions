@@ -128,7 +128,6 @@ class CondaResolver(Resolver):
                     lnk["build_string"],
                     lnk["build_number"],
                 )
-                if k == '_libgcc_mutex_linux-64_conda_forge_0':
                     
                 url, md5_hash = fetched_packages[k]
                 if not url.startswith(lnk["base_url"]):
