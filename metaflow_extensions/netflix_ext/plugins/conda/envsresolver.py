@@ -535,15 +535,16 @@ class EnvsResolver(object):
         co_resolved_envs = (
             {}
         )  # type: Dict[str, List[Tuple[EnvID, ResolvedEnvironment]]]
+        import pdb; pdb.set_trace()
         if len(env_ids):
             with ThreadPoolExecutor() as executor:
                 resolution_result = [
-                    executor.submit(self._resolve, v, builders_by_req_id)
+                    self._resolve(v, builders_by_req_id)
                     for k, v in self._requested_envs.items()
                     if k in env_ids
                 ]
                 for f in as_completed(resolution_result):
-                    env_id, resolved_env, addl_builder_envs = f.result()
+                    env_id, resolved_env, addl_builder_envs = f
                     co_resolved_envs.setdefault(env_id.req_id, []).append(
                         (env_id, resolved_env)
                     )
