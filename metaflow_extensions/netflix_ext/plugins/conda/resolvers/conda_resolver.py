@@ -143,7 +143,7 @@ class CondaResolver(Resolver):
                         hashes={parse_result.url_format: cast(str, parse_result.hash)},
                     )
                 )
-                import pdb; pdb.set_trace()
+
         return (
             ResolvedEnvironment(
                 deps,
