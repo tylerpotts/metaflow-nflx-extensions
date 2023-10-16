@@ -304,7 +304,8 @@ class CondaLockResolver(Resolver):
                         debug.conda_exec(
                             "TOML configuration:\n%s" % "".join(toml_lines)
                         )
-                    self._conda.call_binary(
+                    import pdb; pdb.set_trace()
+                    self._conda.call_binary( #failing here
                         args, binary="conda-lock", addl_env=addl_env
                     )
             # At this point, we need to read the explicit dependencies in the file created
